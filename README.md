@@ -44,20 +44,27 @@ Unfortunately, this seems not to work with portable VS Code. Therefore, the exte
 
 List of the installed extensions:
 
-- Live Server ritwickdey.liveserver
-- Markdown all in one yzhang.markdown-all-in-one
-- Markdown Preview Mermaid Support bierner.markdown-mermaid
-- Markdownlint davidanson.vscode-markdownlint
-- Markmap gera2ld.markmap-vscode
-- Prettier esbenp.prettier-vscode
-- vscode-pdf tomoki1207.pdf
-- yaml redhat.vscode-yaml
-- vscode-icons vscode-icons-team.vscode-icons
-- Debugger for Firefox firefox-devtools.vscode-firefox-debug
-- SAP Fiori Tools - Extension Pack sapse.sap-ux-fiori-tools-extension-pack
-- SAP Mobile Services OData CSDL modeler sapse.vsc-extension-odata-csdl-modeler
-- VS Code extension for project "Credential Digger" saposs.vs-code-extension-for-project-credential-digger
-- SAP CDS Language Support sapse.vscode-cds
+|Extension | ID | Added with release
+| :--- | :--- | ---: |
+| Live Server | ritwickdey.liveserver | 2025.6 |
+| Markdown all in one | yzhang.markdown-all-in-one | 2025.6 |
+| Markdown Preview Mermaid Support | bierner.markdown-mermaid | 2025.6 |
+| Markdownlint | davidanson.vscode-markdownlint | 2025.6 |
+| Markmap | gera2ld.markmap-vscode | 2025.6 |
+| vscode-pdf | tomoki1207.pdf | 2025.6 |
+| yaml | redhat.vscode-yaml| 2025.6 |
+| vscode-icons | vscode-icons-team.vscode-icons | 2025.6 |
+| Debugger for Firefox | firefox-devtools.vscode-firefox-debug | 2025.6 |
+| SAP Fiori Tools - Extension Pack | sapse.sap-ux-fiori-tools-extension-pack | 2025.6 |
+| SAP Mobile Services OData CSDL modeler | sapse.vsc-extension-odata-csdl-modeler | 2025.6 |
+| VS Code extension for project "Credential Digger" | saposs.vs-code-extension-for-project-credential-digger | 2025.6 |
+| SAP CDS Language Support | sapse.vscode-cds | 2025.6 |
+| Prettier| prettier.prettier-vscode replaces deprecated prettier esbenp.prettier-vscode | 2025.12    |
+| SonarQube for IDE | sonarsource.sonarlint-vscode | 2025.12 |
+| Connection Manager for SAP Systems | saposs.sap-ux-sap-systems-ext | 2025.12 |
+| Coverage Gutters | ryanluker.vscode-coverage-gutters | 2025.12 |
+| Playwright Test for VSCode | ms-playwright.playwright | 2025.12 |
+| REST Client | humao.rest-client| 2025.12 |
 
 ## Build process
 
@@ -163,4 +170,12 @@ stateDiagram-v2
         F --> Dist
     }
     Step6 --> [*]
+```
+
+## Clean up
+
+The goal of the build is to produce an artefact that is a portable VS Code in zip format: dist/vscode-dist.zip. All other files created during the build process can be deleted. This is done by running the grunt clean task
+
+```sh
+npx grunt clean
 ```

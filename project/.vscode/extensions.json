@@ -1,0 +1,24 @@
+{
+  "recommendations": [
+    "sapse.sap-ux-fiori-tools-extension-pack",
+    "firefox-devtools.vscode-firefox-debug", 
+    "vscode-icons-team.vscode-icons", 
+    "redhat.vscode-yaml", 
+    "tomoki1207.pdf", 
+    "gera2ld.markmap-vscode", 
+    "yzhang.markdown-all-in-one", 
+    "bierner.markdown-mermaid", 
+    "davidanson.vscode-markdownlint", 
+    "dbaeumer.vscode-eslint", 
+    "sapse.vsc-extension-odata-csdl-modeler",
+    "saposs.vs-code-extension-for-project-credential-digger",
+    "sapse.vscode-cds",
+    "prettier.prettier-vscode",
+    "sonarsource.sonarlint-vscode",
+    "saposs.sap-ux-sap-systems-ext",
+    "ryanluker.vscode-coverage-gutters",
+    "ms-playwright.playwright",
+    "humao.rest-client"
+
+  ]
+}
