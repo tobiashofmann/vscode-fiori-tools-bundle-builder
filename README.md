@@ -11,34 +11,16 @@ npm i
 npm start
 ```
 
+During build, VS Code will start and ask you for confirmation to install the extensions. CTrust the publisher and accept to install the extensions.  When the extensions are installed you can close VS Code. The build script will continue with the next build step.
+
+After the build process ends, the file dist/vscode-dist.zip contains the portable version of VS Code with the extensions.
+
 **Use Cases**
 
 - A portable VS Code for Fiori developers including a set of (recommended) extensions. The application can be stored on a external drive.
 - Citrix environment:
   - Citrix admins can add the portable version to a workstation and provide it to developers. Be aware that portable VS Code is not multi user ready.
   - "Shared" version: The portable version is provided on a central share and Citrix users store the personalization folder data in their %AppData% oder home drive folder. This allows to run VS Code portable by several users simultanously.
-
-**Base VS Code version**
-
-The starting point of every portable VS Code app generated is the official download page.
-
-- [VS Code download](https://code.visualstudio.com/Download)
-
-## VS Code portable mode
- 
-General information about [VS Code portable mode](https://code.visualstudio.com/docs/editor/portable). Adding the folder _data_ makes VS Code portable.
-
-### Adding extensions
-
-VS Code allows to add extensions using the [cli](https://code.visualstudio.com/docs/configure/command-line) when starting VS Code:
-
-- --install-extension *extension id*
-
-To add the provided extension its installation must be manually approved. This can be done automatically by adding this parameter:
-
-- --force
-
-Unfortunately, this seems not to work with portable VS Code. Therefore, the extensions are added through workspace recommendations. The sample project for this approach is in [folder](./project/) and the extensions are listed in file [extensions.json](./project/.vscode/extensions.json).
 
 ## Extensions
 
@@ -65,6 +47,30 @@ List of the installed extensions:
 | Coverage Gutters | ryanluker.vscode-coverage-gutters | 2025.12 |
 | Playwright Test for VSCode | ms-playwright.playwright | 2025.12 |
 | REST Client | humao.rest-client| 2025.12 |
+
+## VS Code
+
+### Base VS Code version
+
+The starting point of every portable VS Code app generated is the official download page.
+
+- [VS Code download](https://code.visualstudio.com/Download)
+
+### VS Code portable mode
+ 
+General information about [VS Code portable mode](https://code.visualstudio.com/docs/editor/portable). Adding the folder _data_ makes VS Code portable.
+
+### Adding extensions
+
+VS Code allows to add extensions using the [cli](https://code.visualstudio.com/docs/configure/command-line) when starting VS Code:
+
+- --install-extension *extension id*
+
+To add the provided extension its installation must be manually approved. This can be done automatically by adding this parameter:
+
+- --force
+
+Unfortunately, this seems not to work with portable VS Code. Therefore, the extensions are added through workspace recommendations. The sample project for this approach is in [folder](./project/) and the extensions are listed in file [extensions.json](./project/.vscode/extensions.json).
 
 ## Build process
 
