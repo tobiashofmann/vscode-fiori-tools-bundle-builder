@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.0", 
   "description": "VS Code bundle creation with latest VS Code and necessary plugins for Fiori Development",
   "keywords": [
     "Code",
