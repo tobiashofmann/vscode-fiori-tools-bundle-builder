@@ -24,7 +24,9 @@ After the build process ends, the file dist/vscode-dist.zip contains the portabl
 
 ## No Build Option
 
-<summary>Installing the extensions to your VS Code installation.</summary>
+<summary>
+Installing the extensions to your VS Code installation.
+</summary>
 
 <details>
 
