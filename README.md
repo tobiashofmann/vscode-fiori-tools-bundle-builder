@@ -22,9 +22,19 @@ After the build process ends, the file dist/vscode-dist.zip contains the portabl
   - Citrix admins can add the portable version to a workstation and provide it to developers. Be aware that portable VS Code is not multi user ready.
   - "Shared" version: The portable version is provided on a central share and Citrix users store the personalization folder data in their %AppData% oder home drive folder. This allows to run VS Code portable by several users simultanously.
 
+## No Build Option
+
+<summary>Installing the extensions to your VS Code installation.</summary>
+
+<details>
+
+In case you do not want to build a portable VS Code, but just add the included extensions to your VS Code installation: open the folder project in your VS Code. It will pick up .vscode/extensions.json file and asks to install the listed extensions. This will add them to your VS Code without having to build the portable version.
+
+</details>
+
 ## Extensions
 
-List of the installed extensions:
+List of the included extensions:
 
 |Extension | ID | Added with release
 | :--- | :--- | ---: |
@@ -48,17 +58,21 @@ List of the installed extensions:
 | Playwright Test for VSCode | ms-playwright.playwright | 2025.12 |
 | REST Client | humao.rest-client| 2025.12 |
 
-## VS Code
+## Build Information
 
-### Base VS Code version
+### VS Code
+
+#### Base VS Code version
 
 The starting point of every portable VS Code app generated is the official download page.
 
 - [VS Code download](https://code.visualstudio.com/Download)
 
-### VS Code portable mode
+#### VS Code portable mode
  
 General information about [VS Code portable mode](https://code.visualstudio.com/docs/editor/portable). Adding the folder _data_ makes VS Code portable.
+
+The download step will allways download the latest available VS Code version. The download is _not_ configured to download a specific version. Running the bundle builder at different days / months will result in a different VS Code version being used. The same for the inluded plugins. 
 
 ### Adding extensions
 
@@ -74,13 +88,18 @@ Unfortunately, this seems not to work with portable VS Code. Therefore, the exte
 
 ## Build process
 
-[Grunt](https://gruntjs.com). The individual steps are executed as GruntJS tasks. Several [Grunt Plugins](https://gruntjs.com/plugins) are used. To install GruntJS and the plugins, just run npm i. Running grunt can be done via npx.
+To install GruntJS and the plugins, just run npm i. Running grunt can be done via npx.
 
 ```sh
 npm i
 npx grunt
 ```
 
+<summary>
+
+The individual steps are executed as [GruntJS](https://gruntjs.com) tasks. Several [Grunt Plugins](https://gruntjs.com/plugins) are used.</summary>
+
+<details>
 This will start GruntJS and run the default tasks. That should be enough to get a working VS Code portable version. Each step of the workflow can be run individually by providing the task number. To run step 1, run grunt 1. To run the 3. step, run grunt 3.
 
 ```sh
@@ -88,6 +107,7 @@ grunt 1
 grunt 2
 grunt 3
 ```
+</details>
 
 All tasks run without user intercation, except step 5. At step 5, VS Code is started and the recommended extensions are installed. A human interaction is necessary to install the extensions.
 
@@ -110,6 +130,12 @@ npx grunt clean
 ```
 
 ### Workflow
+
+<summary>
+Mermaid diagrams
+</summary>
+
+<details>
 
 ```mermaid
 ---
@@ -177,6 +203,8 @@ stateDiagram-v2
     }
     Step6 --> [*]
 ```
+
+</details>
 
 ## Clean up
 
